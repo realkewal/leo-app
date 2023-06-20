@@ -1,9 +1,8 @@
 "use client";
 
 import { Box, Container, Flex, Spacer } from "@chakra-ui/react";
+import { LoginButton, RegisterButton } from "@/components/buttons.component";
 import { signOut, useSession } from "next-auth/react";
-
-import { LoginButton } from "@/components/buttons.component";
 
 export default function Header() {
   const { data: session } = useSession();
@@ -27,7 +26,10 @@ export default function Header() {
                 </span>
               </p>
             ) : (
-              <LoginButton />
+              <>
+                <RegisterButton />
+                <LoginButton />
+              </>
             )}
           </Box>
         </Flex>
