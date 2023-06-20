@@ -16,7 +16,6 @@ async function main() {
       jobtitle: "Full Stack Developer",
     },
   });
-  console.log({ user });
 }
 main()
   .then(() => prisma.$disconnect())

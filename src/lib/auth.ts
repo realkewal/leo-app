@@ -29,8 +29,6 @@ export const authOptions: NextAuthOptions = {
           },
         });
 
-        console.log({ user });
-
         if (!user || !(await compare(credentials.password, user.password))) {
           return null;
         }

@@ -43,7 +43,6 @@ export default function UpdateUsernameForm(): JSX.Element {
         body: JSON.stringify({ id, newData: { jobtitle: newJob } }),
       });
       const data = await response.json();
-      console.log(data);
       setMsg("Success! Redirecting...");
 
       router.push("/spacex");

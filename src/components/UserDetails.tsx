@@ -1,6 +1,7 @@
-import { Box, ListItem, Text, UnorderedList } from "@chakra-ui/react";
+import { Box, Button, ListItem, Text, UnorderedList } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
+import NavigationModal from "@/components/NavModal";
 import { useSession } from "next-auth/react";
 
 export default function UserDetails() {
@@ -23,6 +24,16 @@ export default function UserDetails() {
     }
   }, [session]);
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
   return (
     <Box bg="whiteAlpha.600" my={"10"} p="4" rounded="md">
       <Text fontWeight="bold"> Welcome {session?.user!.name}! </Text>
@@ -30,6 +41,10 @@ export default function UserDetails() {
         <ListItem>Username: {username}</ListItem>
         <ListItem>Job title: {jobtitle}</ListItem>
       </UnorderedList>
+      <Button mt="4" onClick={openModal}>
+        Update details
+      </Button>
+      <NavigationModal isOpen={isOpen} onClose={closeModal} />
     </Box>
   );
 }
