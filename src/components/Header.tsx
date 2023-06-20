@@ -12,10 +12,10 @@ export default function Header() {
       <Container maxW="container.lg">
         <Flex>
           <Box color={"purple.300"} fontWeight={"bold"} fontSize={"4xl"} p="4">
-            Leo
+            Leo X
           </Box>
           <Spacer />
-          <Box pt="7" color="white">
+          <Box pt="6" color="white">
             {session ? (
               <p>
                 Welcome {session.user!.name}!{" "}
