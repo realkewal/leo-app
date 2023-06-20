@@ -29,6 +29,8 @@ export const authOptions: NextAuthOptions = {
           },
         });
 
+        console.log({ user });
+
         if (!user || !(await compare(credentials.password, user.password))) {
           return null;
         }
@@ -37,7 +39,7 @@ export const authOptions: NextAuthOptions = {
           id: user.id,
           email: user.email,
           name: user.name,
-          randomKey: "Leo Key",
+          randomKey: "Leo Keys",
         };
       },
     }),

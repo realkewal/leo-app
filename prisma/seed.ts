@@ -6,12 +6,14 @@ const prisma = new PrismaClient();
 async function main() {
   const password = await hash("leopass123", 12);
   const user = await prisma.user.upsert({
-    where: { email: "hello@admin.com" },
+    where: { email: "hello@iamkewal.com" },
     update: {},
     create: {
-      email: "hello@admin.com",
-      name: "Leo",
+      email: "hello@iamkewal.com",
+      name: "Kewal",
       password,
+      username: "kewal",
+      jobtitle: "Full Stack Developer",
     },
   });
   console.log({ user });

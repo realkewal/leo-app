@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 export const query = gql`
-  query {
+  query Query($limit: Int) {
     company {
       founded
       founder
@@ -15,15 +15,9 @@ export const query = gql`
       test_sites
       vehicles
     }
-    launches {
+    histories(limit: $limit) {
       details
-      launch_site {
-        site_name
-      }
-      mission_name
-      rocket {
-        rocket_name
-      }
+      event_date_utc
     }
   }
 `;

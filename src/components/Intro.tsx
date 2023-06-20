@@ -4,13 +4,6 @@ import {
   Center,
   Heading,
   Link,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
   Text,
   VStack,
 } from "@chakra-ui/react";
